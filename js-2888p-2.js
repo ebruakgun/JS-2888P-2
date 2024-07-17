@@ -11,9 +11,7 @@ async function fetchData() {
     console.log("API died,error");
   }
 }
-
 //Card function
-
 function createCardFunction(dataList) {
   const container = document.getElementById("container");
   container.innerHTML = "";
