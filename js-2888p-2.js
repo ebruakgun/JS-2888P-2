@@ -11,13 +11,7 @@ async function fetchData() {
     console.log("API died,error");
   }
 }
-<<<<<<< HEAD:js-2888p-1.js
-
-//Card function part
-
-=======
 //Card function
->>>>>>> 3351dbc2290fc6d02c05efeacb74369e1d35668d:js-2888p-2.js
 function createCardFunction(dataList) {
   const container = document.getElementById("container");
   container.innerHTML = "";
