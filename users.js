@@ -49,9 +49,13 @@ function createCardFunction(dataList) {
         </ul>
           </p>
         </div>
+        <div>
+        <h3>Posts</h3>
+        <p><a href="posts.html?userId=${user.id}">Visual</a></p>
+        </div>
       </div>
          `;
-         container.append(card)
+    container.append(card);
   });
 }
 //Load card function
