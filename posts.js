@@ -24,21 +24,10 @@ function getUserId() {
   }
 }
 
-async function fetchData(userId) {
-  try {
-    const response = await fetch(
-      `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
-    );
-    const data = await response.json();
-    return data
-  } catch (error) {
-    console.log("API passed away");
-  }
-}
+import { fetchData } from "./utils.js";
 
 function createCardFunction(data) {
   const container = document.getElementById("container");
-//   container.innerHTML = "";
   data.forEach((post) => {
     const newCard = document.createElement("div");
     newCard.innerHTML = `
@@ -47,12 +36,13 @@ function createCardFunction(data) {
           <p> Body:${post.body}</p>
          </div>
          `;
-         container.appendChild(newCard)
+    container.appendChild(newCard);
   });
 }
 
 async function loadCard(userId) {
-  const data = await fetchData(userId);
+  const requestUrl = `https://jsonplaceholder.typicode.com/posts?userId=${userId}`;
+  const data = await fetchData(requestUrl);
   createCardFunction(data);
 }
 const userId = getUserId();

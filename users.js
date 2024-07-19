@@ -2,20 +2,11 @@
 
 const usersData = "https://jsonplaceholder.typicode.com/users";
 
-async function fetchData() {
-  try {
-    const response = await fetch(usersData);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.log("API died,error");
-  }
-}
+import { fetchData } from "./utils.js";
 //Card function
 function createCardFunction(dataList) {
   const container = document.getElementById("container");
-  container.innerHTML = "";
-  dataList.forEach((user) => {
+  dataList.forEach((user)=> {
     const card = document.createElement("div");
     card.innerHTML = `
           <div class="card">
@@ -61,7 +52,7 @@ function createCardFunction(dataList) {
 //Load card function
 
 async function loadCard() {
-  const data = await fetchData();
+  const data = await fetchData(usersData);
   console.log(data);
   createCardFunction(data);
 }
