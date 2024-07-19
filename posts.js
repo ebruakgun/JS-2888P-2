@@ -11,7 +11,7 @@ function getUserId() {
       return userId;
     } else {
       const newId = Number(prompt("Pls enter a user Id"));
-      if (isNaN(newId) === false && userId > 0) {
+      if (isNaN(newId) === false && newId > 0) {
         return newId;
       } else {
         alert("Input value is not valid!");
@@ -38,7 +38,7 @@ async function fetchData(userId) {
 
 function createCardFunction(data) {
   const container = document.getElementById("container");
-  container.innerHTML = "";
+//   container.innerHTML = "";
   data.forEach((post) => {
     const newCard = document.createElement("div");
     newCard.innerHTML = `
